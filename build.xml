@@ -1,0 +1,56 @@
+<project name="stomp" default="build">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    
+    <target name="build">
+        <copy todir="build">
+            <fileset dir="lib/test" includes="*.jar"/>
+        </copy>
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" debug="on" optimize="on" source="1.5" target="1.5"/>
+        <jar jarfile="build/stomp.jar" basedir="build/classes"/>
+
+        <mkdir dir="build/testclasses"/>
+        <javac srcdir="test" destdir="build/testclasses" debug="on" optimize="on" source="1.5" target="1.5">
+            <classpath>
+                <fileset dir="build" includes="stomp.jar"/>
+                <fileset dir="lib/test" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <jar jarfile="build/stomptest.jar" basedir="build/testclasses">
+            <manifest>
+                <attribute name="Main-Class" value="stompperf.Menu"/>
+                <attribute name="Class-Path" value="stomp.jar junit-4.8.2.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="test" depends="build">
+        <mkdir dir="build/junit"/>
+        <property name="test" value="*Test"/>
+        <echo message="Running tests based on pattern '${test}' (overridable with -Dtest=)"/>
+        <junit showoutput="yes" fork="true" forkmode="once" printsummary="true"
+               haltonfailure="false" errorproperty="junit.result" failureproperty="junit.result">
+            <classpath>
+                <fileset dir="build" includes="*.jar"/>
+            </classpath>
+            <formatter type="xml"/>
+
+            <batchtest todir="build/junit">
+                <fileset dir="build/testclasses" includes="stomptest/**/${test}.class"/>
+            </batchtest>
+        </junit>
+
+        <junitreport todir="build/junit">
+            <fileset dir="build/junit">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="noframes" todir="build/junit-report"/>
+        </junitreport>
+
+        <fail if="junit.result" message="One or more unit tests has failed."/>
+    </target>
+
+</project>
