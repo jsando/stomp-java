@@ -1,0 +1,32 @@
+STOMP Library
+Jason Sando
+July 2010
+
+Serious refactoring of Java Stomp client code from codehaus.  Original code has a lot of multithreading bugs
+and doesn't appear to have been maintained in years.  Also a lot of non-Java code patterns makes it look like
+a poor port from python or some other language.
+
+Borrowed slightly from RabbitMQ AMQ client (which essentially follows the same pattern as the codehaus Stomp client).
+
+Optimized for small footprint, multithreading safety, and runtime memory.
+
+I'm mainly interested in high performance, low footprint messaging to ActiveMQ 5.3.  It may work with other stomp
+servers, I don't know.
+
+TODO:
+ * [DONE] UDP send should actually send a MESSAGE command not a SEND, or when receiving transform it
+ * UDP transmit should be able to reuse the same byte buffer, and cache SocketAddress for remote host (mostly should be same)
+ * Need ability to pause/resume a connection
+ * stomp+ssl url scheme
+ * Unit tests
+    * UDP loopback mode
+    * TCP clean shutdown
+    * UDP clean shutdown
+    * UDP & TCP soTimeout
+ * Perf tests
+    * UDP performance (want to look at caching inetaddr)
+    * Frame unmarshall performance without content-length
+ * Should errors cause the connection to shutdown?  I commented this out, but I suspect it was a good idea, I just
+   need better state management (ie, if already shutting down don't try to shutdown).
+
+   
