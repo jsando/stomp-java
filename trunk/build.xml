@@ -33,6 +33,7 @@
         <echo message="Running tests based on pattern '${test}' (overridable with -Dtest=)"/>
         <junit showoutput="yes" fork="true" forkmode="once" printsummary="true"
                haltonfailure="false" errorproperty="junit.result" failureproperty="junit.result">
+            <!--<sysproperty key="java.net.preferIPv4Stack" value="true"/>-->
             <classpath>
                 <fileset dir="build" includes="*.jar"/>
             </classpath>

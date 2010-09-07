@@ -28,6 +28,13 @@ public final class Message {
     public static final String REPLY_TO = "reply-to";
     public static final String TYPE = "type";
 
+    /**
+     * Remote host address for multicast packets.
+     */
+    public static final String HOST_ADDRESS = "host-address";
+
+    public static final String CLIENT_ID = "client-id";
+
     Message(Connection connection, Frame frame) {
         this.connection = connection;
         headers = frame.getHeaders();

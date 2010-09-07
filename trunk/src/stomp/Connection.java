@@ -296,15 +296,6 @@ public abstract class Connection {
     }
 
     protected void publishError(String message, Exception ex) {
-//        System.out.printf("**** unhandled error: %s\n", message);
-//        synchronized (this) {
-//            try {
-//                close();
-//            } catch (Exception e) {
-//                // ignore
-//            }
-//            notifyAll();
-//        }
         synchronized (subscriptions) {
             lastError = message;
             lastException = ex;
