@@ -132,7 +132,12 @@ public abstract class Connection {
             // Whereas Windows apparently will filter based on our group membership.
             MulticastSocket socket;
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-                socket = new MulticastSocket(port);
+                String bindAddress = System.getProperty ("stomp.udp.bind");
+                if (bindAddress != null) {
+                    socket = new MulticastSocket(new InetSocketAddress(bindAddress, port));
+                } else {
+                    socket = new MulticastSocket(port);
+                }
             } else {
                 // Linux, Solaris, OSX ...
                 InetSocketAddress mcastBindAddress = new InetSocketAddress(hostAddy, port);
