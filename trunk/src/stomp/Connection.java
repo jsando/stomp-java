@@ -1,8 +1,10 @@
 package stomp;
 
+import javax.net.SocketFactory;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.io.StringReader;
+import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
@@ -85,7 +87,10 @@ public abstract class Connection {
             return new BufferConnection(uri);
         }
 
-        if (!"stomp".equals(uri.getScheme())) {
+        boolean ssl = false;
+        if (uri.getScheme().equals ("stomp+ssl")) {
+            ssl = true;
+        } else if (!"stomp".equals(uri.getScheme())) {
             throw new IllegalArgumentException("Invalid protocol: " + url);
         }
 
@@ -146,7 +151,20 @@ public abstract class Connection {
             socket.joinGroup(hostAddy);
             connection = new UdpConnection(uri, socket, properties);
         } else {
-            Socket socket = new Socket(hostAddy, port);
+            SocketFactory factory;
+            if (ssl) {
+                // Use reflection so as not to initialize SSL subsystem when not in use.
+                try {
+                    Class clazz = Class.forName("javax.net.ssl.SSLSocketFactory");
+                    Method method = clazz.getDeclaredMethod("getDefault");
+                    factory = (SocketFactory) method.invoke(null);
+                } catch (Exception e) {
+                    throw new IOException("Error initializing SSL sockets: " + e, e);
+                }
+            } else {
+                factory = SocketFactory.getDefault();
+            }
+            Socket socket = factory.createSocket(hostAddy, port);
             connection = new TcpConnection(uri, socket, properties);
         }
         return connection;
