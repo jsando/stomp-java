@@ -15,6 +15,7 @@ public final class TcpConnection extends Connection implements Runnable {
     private final DataInputStream input;
     private final Socket socket;
     private int nextSubscriptionId = 1;
+    private boolean closedSocket = false; // If had to terminate by forceful close of socket (ie, SSL)
 
     public TcpConnection(URI uri, Socket socket, Properties properties) throws IOException {
         super(uri);
@@ -60,10 +61,19 @@ public final class TcpConnection extends Connection implements Runnable {
 
     @Override
     protected void disconnect() {
+        // Preferred way to close is to send EOF, but SSLSockets don't support that method.
         try {
             socket.shutdownInput();
         } catch (IOException e) {
             publishError("Error in shutdown: " + e, e);
+        } catch (Exception e) {
+            // Sun's SSLSocket throws UnsupportedOperationException
+            closedSocket = true;
+            try {
+                socket.close();
+            } catch (IOException e1) {
+                publishError("Error in shutdown: " + e1, e1);
+            }
         }
     }
 
@@ -84,19 +94,23 @@ public final class TcpConnection extends Connection implements Runnable {
                     break;
                 frameReceived(frame);
             } catch (IOException e) {
-                publishError(e.getMessage(), e);
+                if (!closedSocket)
+                    publishError(e.getMessage(), e);
                 break;
             }
         }
-        try {
-            transmit(new Frame(Frame.TYPE_DISCONNECT, null, null));
-        } catch (IOException e) {
-            publishError("Disconnect failed (ignored): " + e, e);
-        }
-        try {
-            socket.close();
-        } catch (IOException e) {
-            // ignore?
+
+        if (!closedSocket) {
+            try {
+                transmit(new Frame(Frame.TYPE_DISCONNECT, null, null));
+            } catch (IOException e) {
+                publishError("Disconnect failed (ignored): " + e, e);
+            }
+            try {
+                socket.close();
+            } catch (IOException e) {
+                // ignore?
+            }
         }
         closed = true;
     }

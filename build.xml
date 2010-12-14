@@ -9,11 +9,11 @@
             <fileset dir="lib/test" includes="*.jar"/>
         </copy>
         <mkdir dir="build/classes"/>
-        <javac srcdir="src" destdir="build/classes" debug="on" optimize="on" source="1.5" target="1.5"/>
+        <javac srcdir="src" destdir="build/classes" debug="on" optimize="on" source="1.5" target="1.5" includeantruntime="false"/>
         <jar jarfile="build/stomp.jar" basedir="build/classes"/>
 
         <mkdir dir="build/testclasses"/>
-        <javac srcdir="test" destdir="build/testclasses" debug="on" optimize="on" source="1.5" target="1.5">
+        <javac srcdir="test" destdir="build/testclasses" debug="on" optimize="on" source="1.5" target="1.5" includeantruntime="false">
             <classpath>
                 <fileset dir="build" includes="stomp.jar"/>
                 <fileset dir="lib/test" includes="*.jar"/>

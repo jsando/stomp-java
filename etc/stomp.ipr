@@ -2,7 +2,7 @@
 <project version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
-    <buildFile url="file://$PROJECT_DIR$/../build.xml">
+    <buildFile url="file://$USER_HOME$/Code/stomp-java/build.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
@@ -38,6 +38,12 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="GradleUISettings">
+    <setting name="root" />
+  </component>
+  <component name="GradleUISettings2">
+    <setting name="root" />
+  </component>
   <component name="IdProvider" IDEtalkID="DE239C3E8DBFCDAE8B05FE708C85875C" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -188,7 +194,7 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$PROJECT_DIR$/..">
+        <entry key="$USER_HOME$/Code/stomp-java">
           <value>
             <SvnBranchConfiguration>
               <option name="trunkUrl" value="https://www.keikiboys.net/svn/clarity/stomp/trunk" />
