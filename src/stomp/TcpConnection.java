@@ -34,7 +34,7 @@ public final class TcpConnection extends Connection implements Runnable {
         Frame connect = new Frame(Frame.TYPE_CONNECT);
         connect.getHeaders().put("login", properties.getProperty("login", ""));
         connect.getHeaders().put("passcode", properties.getProperty("passcode", ""));
-        transmit(connect);
+        transmit(connect, -1);
 
         try {
             long totalWait = 0;
@@ -53,10 +53,15 @@ public final class TcpConnection extends Connection implements Runnable {
     }
 
     @Override
-    protected void transmit(Frame frame) throws IOException {
+    protected void transmit(Frame frame, long waitMillis) throws IOException {
+        String receipt = null;
+        if (waitMillis >= 0)
+            receipt = addReceipt(frame);
         synchronized (output) {
             frame.write(output);
         }
+        if (waitMillis >= 0)
+            waitOnReceipt(receipt, waitMillis);
     }
 
     @Override
@@ -102,7 +107,7 @@ public final class TcpConnection extends Connection implements Runnable {
 
         if (!closedSocket) {
             try {
-                transmit(new Frame(Frame.TYPE_DISCONNECT, null, null));
+                transmit(new Frame(Frame.TYPE_DISCONNECT, null, null), -1);
             } catch (IOException e) {
                 publishError("Disconnect failed (ignored): " + e, e);
             }

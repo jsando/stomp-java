@@ -221,7 +221,7 @@ public abstract class Connection {
     public void ack (String messageId, long waitMillis) throws IOException {
         Frame frame = new Frame(Frame.TYPE_ACK);
         frame.getHeaders().put("message-id", messageId);
-        transmit(frame, waitMillis);
+        transmit1(frame, waitMillis);
     }
 
     public void subscribe (String destination, Consumer consumer, long waitMillis, String...headers) throws IOException {
@@ -238,7 +238,7 @@ public abstract class Connection {
                 frame.getHeaders().put (key, val);
             }
         }
-        transmit(frame, waitMillis);
+        transmit1(frame, waitMillis);
         subscriptions.put (id, consumer);
     }
 
@@ -247,21 +247,21 @@ public abstract class Connection {
             throw new IOException ("Not subscribed to '" + destination + "'.");
         Frame frame = new Frame(Frame.TYPE_UNSUBSCRIBE);
         frame.getHeaders().put("destination", destination);
-        transmit(frame, waitMillis);
+        transmit1(frame, waitMillis);
         subscriptions.remove (destination);
     }
 
     public void send (String destination, Message message, long waitMillis) throws IOException {
         Frame frame = new Frame(message);
         frame.getHeaders().put("destination", destination);
-        transmit(frame, waitMillis);
+        transmit1(frame, waitMillis);
     }
 
     public boolean isConnected() {
         return connected;
     }
 
-    protected abstract void transmit (Frame frame) throws IOException;
+    protected abstract void transmit(Frame frame, long waitMillis) throws IOException;
     protected abstract void disconnect();
     protected abstract String createSubscriptionId(String destination);
 
@@ -342,26 +342,20 @@ public abstract class Connection {
         }
     }
 
-    private void transmit(Frame frame, long waitMillis) throws IOException {
+    private void transmit1(Frame frame, long waitMillis) throws IOException {
         if (paused)
             throw new IOException ("Can't send while paused.");
-        
-        String receipt = null;
-        if (waitMillis >= 0)
-            receipt = addReceipt(frame);
-        transmit(frame);
-        if (waitMillis >= 0)
-            waitOnReceipt(receipt, waitMillis);
+        transmit (frame, waitMillis);
     }
 
-    private String addReceipt(Frame frame) {
+    protected String addReceipt(Frame frame) {
         // TODO: use something more deterministic for receipt
         String receipt = String.valueOf(frame.hashCode());
         frame.getHeaders().put("receipt", receipt);
         return receipt;
     }
 
-    private void waitOnReceipt(String receipt, long waitMillis) throws IOException {
+    protected void waitOnReceipt(String receipt, long waitMillis) throws IOException {
         if (Thread.currentThread() == thread)
             throw new IOException ("Attempt to performing blocking operation using connection thread.");
 
