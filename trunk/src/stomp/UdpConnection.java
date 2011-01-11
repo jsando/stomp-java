@@ -6,7 +6,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.URI;
@@ -68,7 +67,7 @@ public final class UdpConnection extends Connection implements Runnable {
     }
 
     @Override
-    protected void transmit(Frame frame) throws IOException {
+    protected void transmit(Frame frame, long waitMillis) throws IOException {
         if (frame.getType().equals(Frame.TYPE_SEND)) {
             frame.setType(Frame.TYPE_MESSAGE);
         }

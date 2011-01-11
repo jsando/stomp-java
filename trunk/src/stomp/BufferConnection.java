@@ -28,7 +28,7 @@ public final class BufferConnection extends Connection {
     //--------------------------------------------------------- StompConnection
 
     @Override
-    protected void transmit(Frame frame) throws IOException {
+    protected void transmit(Frame frame, long waitMillis) throws IOException {
         if (frame.getType().equals (Frame.TYPE_SEND)) {
             storeMessage (frame);
         }

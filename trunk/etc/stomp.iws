@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="b2e87b0d-f2e1-4cee-9c99-3c1b354b7104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iws" afterPath="$PROJECT_DIR$/stomp.iws" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Code/stomp-java/src/stomp/TcpConnection.java" afterPath="$USER_HOME$/Code/stomp-java/src/stomp/TcpConnection.java" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Code/stomp-java/build.xml" afterPath="$USER_HOME$/Code/stomp-java/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.ipr" afterPath="$PROJECT_DIR$/stomp.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iml" afterPath="$PROJECT_DIR$/stomp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.ipr" afterPath="$PROJECT_DIR$/stomp.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iws" afterPath="$PROJECT_DIR$/stomp.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/BufferConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/BufferConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/Connection.java" afterPath="$PROJECT_DIR$/../src/stomp/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/UdpConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/UdpConnection.java" />
     </list>
-    <ignored path="$USER_HOME_GRAILS$/" />
     <ignored path="$USER_HOME_GRIFFON$/" />
+    <ignored path="$USER_HOME_GRAILS$/" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,38 +65,10 @@
   <component name="FavoritesManager">
     <favorites_list name="stomp" />
   </component>
-  <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StompTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stomptest/StompTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TcpServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="77" selection-start="4599" selection-end="4599" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TcpSendThroughput.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpSendThroughput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TcpReceiveThroughput.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpReceiveThroughput.java">
+        <entry file="file://$PROJECT_DIR$/../test/stompperf/TcpReceiveThroughput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
               <folding />
@@ -103,7 +77,7 @@
         </entry>
       </file>
       <file leaf-file-name="ConnectionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/ConnectionTest.java">
+        <entry file="file://$PROJECT_DIR$/../test/stompperf/ConnectionTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
               <folding />
@@ -111,35 +85,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TcpConnection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/TcpConnection.java">
+      <file leaf-file-name="TcpConnection.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="3" selection-start="3347" selection-end="3347" vertical-scroll-proportion="0.0">
+            <state line="61" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.45248228">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Connection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/Connection.java">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="216" column="19" selection-start="7534" selection-end="7534" vertical-scroll-proportion="0.0">
+            <state line="263" column="0" selection-start="9356" selection-end="9356" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Code/stomp-java/build.xml">
+      <file leaf-file-name="BufferConnection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/BufferConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="127" selection-start="405" selection-end="405" vertical-scroll-proportion="0.19270073">
+            <state line="30" column="19" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UdpConnection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/UdpConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="19" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="127" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/Frame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="64" selection-start="4784" selection-end="4784" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../src/stomp/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="53" selection-start="2292" selection-end="2292" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="UdpConnectionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/stomp-java/test/stomptest/UdpConnectionTest.java">
+        <entry file="file://$PROJECT_DIR$/../test/stomptest/UdpConnectionTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="27" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
               <folding />
@@ -161,22 +171,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/TcpThrouput.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/DaemonPerformanceTest.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/TcpServer.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/Menu.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/TcpReceiveThroughput.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stompperf/TcpSendThroughput.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/Frame.java" />
-        <option value="$USER_HOME$/Code/stomp-java/README" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stomptest/StompTest.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/BufferConnection.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/Message.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/UdpConnection.java" />
-        <option value="$USER_HOME$/Code/stomp-java/test/stomptest/UdpConnectionTest.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/Connection.java" />
-        <option value="$USER_HOME$/Code/stomp-java/src/stomp/TcpConnection.java" />
-        <option value="$USER_HOME$/Code/stomp-java/build.xml" />
+        <option value="$PROJECT_DIR$/../test/stompperf/TcpThrouput.java" />
+        <option value="$PROJECT_DIR$/../test/stompperf/DaemonPerformanceTest.java" />
+        <option value="$PROJECT_DIR$/../test/stompperf/TcpServer.java" />
+        <option value="$PROJECT_DIR$/../test/stompperf/Menu.java" />
+        <option value="$PROJECT_DIR$/../test/stompperf/TcpReceiveThroughput.java" />
+        <option value="$PROJECT_DIR$/../test/stompperf/TcpSendThroughput.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/Frame.java" />
+        <option value="$PROJECT_DIR$/../README" />
+        <option value="$PROJECT_DIR$/../test/stomptest/StompTest.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/BufferConnection.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/Message.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/UdpConnection.java" />
+        <option value="$PROJECT_DIR$/../test/stomptest/UdpConnectionTest.java" />
+        <option value="$PROJECT_DIR$/../build.xml" />
+        <option value="$PROJECT_DIR$/../src/stomp/Connection.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
       </list>
     </option>
   </component>
@@ -289,9 +299,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,8 +318,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -324,25 +334,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PhpRunConfigurationType" factoryName="PHP">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Buildr.BeforeRunTask" enabled="false" />
-        <option name="FtpUpload" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="ValidateXdebugSetup" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Buildr.BeforeRunTask" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="ValidateXdebugSetup" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -356,7 +347,7 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" class_name="" html_or_swf_file_path="" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" port="0" run_mode="HtmlOrSwfFile" scope="Class" socket_policy_port="0" url_to_launch="http://">
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/usr/bin/flashplayer" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -367,7 +358,6 @@
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" />
-      <extension name="snapshooter" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -421,7 +411,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" />
-      <extension name="snapshooter" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -441,19 +430,8 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Buildr.BeforeRunTask" enabled="false" />
-        <option name="FtpUpload" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="ValidateXdebugSetup" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" />
-      <extension name="snapshooter" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -470,6 +448,7 @@
         <value defaultName="moduleWithDependencies" />
       </option>
       <envs />
+      <patterns />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -485,6 +464,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR" />
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -506,16 +488,16 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$USER_HOME$/Code/stomp-java" />
-          <option name="myCopyRoot" value="$USER_HOME$/Code/stomp-java" />
+          <option name="myVcsRoot" value="$PROJECT_DIR$/.." />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/.." />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$USER_HOME$/Code/stomp-java" />
-          <option name="myCopyRoot" value="$USER_HOME$/Code/stomp-java" />
+          <option name="myVcsRoot" value="$PROJECT_DIR$/.." />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/.." />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -529,27 +511,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="1440" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Buildr" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494577" sideWeight="0.45584047" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24728851" sideWeight="0.34042552" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473041" sideWeight="0.66239315" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24728851" sideWeight="0.64893615" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Buildr" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32712767" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -566,6 +548,7 @@
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
@@ -587,7 +570,7 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-    <buildFile url="file://$USER_HOME$/Code/stomp-java/build.xml">
+    <buildFile url="file://$PROJECT_DIR$/../build.xml">
       <antCommandLine value="" />
       <runInBackground value="true" />
       <targetFilters />
@@ -597,84 +580,84 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/UdpConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="48" selection-start="3504" selection-end="3504" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/BufferConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="30" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/Consumer.java">
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="9" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="31" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stomptest/StompTest.java">
+    <entry file="file://$PROJECT_DIR$/../test/stomptest/StompTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stomptest/UdpConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="27" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpServer.java">
+    <entry file="file://$PROJECT_DIR$/../test/stompperf/TcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="77" selection-start="4599" selection-end="4599" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpSendThroughput.java">
+    <entry file="file://$PROJECT_DIR$/../test/stompperf/TcpSendThroughput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+        <state line="7" column="6" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/stompperf/TcpReceiveThroughput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/stompperf/ConnectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="127" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="64" selection-start="4784" selection-end="4784" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/TcpReceiveThroughput.java">
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+        <state line="84" column="53" selection-start="2292" selection-end="2292" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/test/stompperf/ConnectionTest.java">
+    <entry file="file://$PROJECT_DIR$/../test/stomptest/UdpConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
+        <state line="47" column="27" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/stomp/BufferConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/Connection.java">
+    <entry file="file://$PROJECT_DIR$/../src/stomp/UdpConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="19" selection-start="7534" selection-end="7534" vertical-scroll-proportion="0.0">
+        <state line="69" column="19" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/src/stomp/TcpConnection.java">
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="3" selection-start="3347" selection-end="3347" vertical-scroll-proportion="0.0">
+        <state line="263" column="0" selection-start="9356" selection-end="9356" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/stomp-java/build.xml">
+    <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="127" selection-start="405" selection-end="405" vertical-scroll-proportion="0.19270073">
+        <state line="61" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.45248228">
           <folding />
         </state>
       </provider>
