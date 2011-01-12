@@ -1,4 +1,16 @@
-<project name="stomp" default="build">
+<project name="stomp" default="release">
+
+    <property environment="env"/>
+    <property name="env.BUILD_NUMBER" value="UNSTABLE"/>
+    <property name="build.number" value=".${env.BUILD_NUMBER}"/>
+    <property name="app.version" value="1.0.0${build.number}"/>
+
+    <echo message="Building ${ant.project.name} version ${app.version}"/>
+
+    <!-- properties -->
+    <property name="build.home" value="build"/>
+    <property name="dist.home" value="${build.home}/dist"/>
+    <property name="release.name" value="${ant.project.name}-${app.version}"/>
 
     <target name="clean">
         <delete dir="build"/>
@@ -10,7 +22,11 @@
         </copy>
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes" debug="on" optimize="on" source="1.5" target="1.5" includeantruntime="false"/>
-        <jar jarfile="build/stomp.jar" basedir="build/classes"/>
+        <jar jarfile="build/stomp.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Implementation-Version" value="${app.version}"/>
+            </manifest>
+        </jar>
 
         <mkdir dir="build/testclasses"/>
         <javac srcdir="test" destdir="build/testclasses" debug="on" optimize="on" source="1.5" target="1.5" includeantruntime="false">
@@ -52,6 +68,31 @@
         </junitreport>
 
         <fail if="junit.result" message="One or more unit tests has failed."/>
+    </target>
+
+    <target name="release" depends="clean,build,test">
+
+        <mkdir dir="${build.home}/api"/>
+        <javadoc destdir="${build.home}/api" sourcepath="src"/>
+
+        <mkdir dir="${dist.home}"/>
+        <tar tarfile="${dist.home}/${release.name}.tar.gz" compression="gzip">
+            <tarfileset dir="${build.home}" includes="${ant.project.name}.jar" prefix="${release.name}/lib" preserveleadingslashes="true"/>
+            <tarfileset dir="${build.home}/api" includes="**" prefix="${release.name}/api" preserveleadingslashes="true"/>
+        </tar>
+        <tar destfile="${dist.home}/${release.name}-src.tar.gz" longfile="gnu" compression="gzip">
+            <tarfileset dir="${basedir}" defaultexcludes="true" prefix="${release.name}-src" preserveleadingslashes="true">
+                <include name="build.xml"/>
+                <include name="etc/**"/>
+                <include name="lib/**"/>
+                <include name="src/**"/>
+                <include name="test/**"/>
+            </tarfileset>
+        </tar>
+        <checksum algorithm="sha1" pattern="{0}  {1}">
+            <fileset dir="${dist.home}" includes="*.tar.gz"/>
+        </checksum>
+
     </target>
 
 </project>
