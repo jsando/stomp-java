@@ -68,7 +68,8 @@ public final class TcpConnection extends Connection implements Runnable {
     protected void disconnect() {
         // Preferred way to close is to send EOF, but SSLSockets don't support that method.
         try {
-            socket.shutdownInput();
+            // need to force socket close or input/output streams may hang
+            socket.close();
         } catch (IOException e) {
             publishError("Error in shutdown: " + e, e);
         } catch (Exception e) {
