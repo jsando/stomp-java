@@ -66,20 +66,13 @@ public final class TcpConnection extends Connection implements Runnable {
 
     @Override
     protected void disconnect() {
-        // Preferred way to close is to send EOF, but SSLSockets don't support that method.
+        // Preferred way to close is to send EOF via shutdownInput, but SSLSockets don't support that method.
+        // Also must force socket close or input/output streams may hang
         try {
-            // need to force socket close or input/output streams may hang
-            socket.close();
-        } catch (IOException e) {
-            publishError("Error in shutdown: " + e, e);
-        } catch (Exception e) {
-            // Sun's SSLSocket throws UnsupportedOperationException
             closedSocket = true;
-            try {
-                socket.close();
-            } catch (IOException e1) {
-                publishError("Error in shutdown: " + e1, e1);
-            }
+            socket.close();
+        } catch (Exception e) {
+            publishError("Error in shutdown: " + e, e);
         }
     }
 
