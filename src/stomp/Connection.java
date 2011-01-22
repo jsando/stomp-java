@@ -206,7 +206,7 @@ public abstract class Connection {
             disconnect();
             try {
                 if (thread != null) {
-                    thread.join();
+                    thread.join(3000); // Try to wait for clean shutdown, but not forever.
                 }
             } catch (InterruptedException e) {
                 // ignore
