@@ -60,7 +60,7 @@ public final class TcpConnection extends Connection implements Runnable {
         synchronized (output) {
             frame.write(output);
         }
-        if (waitMillis >= 0)
+        if (receipt != null)
             waitOnReceipt(receipt, waitMillis);
     }
 

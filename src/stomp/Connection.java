@@ -348,9 +348,16 @@ public abstract class Connection {
         transmit (frame, waitMillis);
     }
 
+    private int nextReceiptId;
+
     protected String addReceipt(Frame frame) {
-        // TODO: use something more deterministic for receipt
-        String receipt = String.valueOf(frame.hashCode());
+        String receipt;
+        synchronized (receipts) {
+            nextReceiptId++;
+            if (nextReceiptId > 999999)
+                nextReceiptId = 0;
+            receipt = Integer.toString(nextReceiptId);
+        }
         frame.getHeaders().put("receipt", receipt);
         return receipt;
     }
@@ -359,16 +366,17 @@ public abstract class Connection {
         if (Thread.currentThread() == thread)
             throw new IOException ("Attempt to performing blocking operation using connection thread.");
 
+        final long waitOver = System.currentTimeMillis() + waitMillis;
         synchronized (receipts) {
-            if (!receipts.contains(receipt)) {
+            while (!receipts.contains(receipt)) {
                 try {
                     receipts.wait(waitMillis);
                 } catch (InterruptedException e) {
                     throw new InterruptedIOException();
                 }
 
-                if (!receipts.contains(receipt)) {
-                    throw new IOException ("Timeout waiting for receipt.");
+                if (!receipts.contains(receipt) && System.currentTimeMillis() > waitOver) {
+                    throw new IOException ("Timeout waiting for receipt '" + receipt + "'.");
                 }
             }
             receipts.remove(receipt);
