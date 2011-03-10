@@ -27,6 +27,9 @@ public final class TcpConnection extends Connection implements Runnable {
         if (properties.containsKey("soTimeout")) {
             socket.setSoTimeout(Integer.parseInt (properties.getProperty("soTimeout")));
         }
+        if (properties.containsKey("tcpNoDelay")) {
+            socket.setTcpNoDelay("true".equals(properties.getProperty("tcpNoDelay")));
+        }
 
         super.start();
 
@@ -34,7 +37,12 @@ public final class TcpConnection extends Connection implements Runnable {
         Frame connect = new Frame(Frame.TYPE_CONNECT);
         connect.getHeaders().put("login", properties.getProperty("login", ""));
         connect.getHeaders().put("passcode", properties.getProperty("passcode", ""));
-        transmit(connect, -1);
+        try {
+            transmit(connect, -1);
+        } catch (IOException e) {
+            close();
+            throw e;
+        }
 
         try {
             long totalWait = 0;
