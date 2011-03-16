@@ -164,7 +164,17 @@ public abstract class Connection {
             } else {
                 factory = SocketFactory.getDefault();
             }
-            Socket socket = factory.createSocket(hostAddy, port);
+            Socket socket = factory.createSocket();
+            try {
+                socket.connect(new InetSocketAddress(hostAddy, port), 2000);
+            } catch (IOException e) {
+                try {
+                    socket.close();
+                } catch (IOException e1) {
+                    // ignore
+                }
+                throw e;
+            }
             connection = new TcpConnection(uri, socket, properties);
         }
         return connection;

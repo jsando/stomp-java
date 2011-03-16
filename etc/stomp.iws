@@ -4,7 +4,6 @@
     <list default="true" readonly="true" id="b2e87b0d-f2e1-4cee-9c99-3c1b354b7104" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iws" afterPath="$PROJECT_DIR$/stomp.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/Connection.java" afterPath="$PROJECT_DIR$/../src/stomp/Connection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -63,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TcpConnection.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TcpConnection.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
+            <state line="80" column="0" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.41379312">
               <folding />
             </state>
           </provider>
@@ -81,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Connection.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="360" column="0" selection-start="12905" selection-end="12905" vertical-scroll-proportion="0.6193103">
+            <state line="175" column="0" selection-start="6641" selection-end="6641" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,8 +126,8 @@
         <option value="$PROJECT_DIR$/../src/stomp/UdpConnection.java" />
         <option value="$PROJECT_DIR$/../test/stomptest/UdpConnectionTest.java" />
         <option value="$PROJECT_DIR$/../build.xml" />
-        <option value="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
         <option value="$PROJECT_DIR$/../src/stomp/Connection.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
       </list>
     </option>
   </component>
@@ -167,8 +166,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,7 +205,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Favorites" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,7 +410,7 @@
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862645" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -419,7 +418,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24658519" sideWeight="0.67394096" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24658519" sideWeight="0.67241377" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -516,9 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../test/stompperf/ConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.07650273">
-          <folding />
-        </state>
+        <state line="8" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.07650273" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../src/stomp/BufferConnection.java">
@@ -528,37 +525,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../src/stomp/UdpConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="19" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.01864181">
-          <folding />
-        </state>
+        <state line="69" column="19" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.01864181" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="983" selection-end="1112" vertical-scroll-proportion="0.01897019">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../src/stomp/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="20" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="0" selection-start="983" selection-end="1112" vertical-scroll-proportion="0.01897019" />
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/1.6.0_22-b04-307.jdk/Contents/Home/src.jar!/src/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="22" selection-start="3570" selection-end="3570" vertical-scroll-proportion="0.68">
-          <folding />
-        </state>
+        <state line="84" column="22" selection-start="3570" selection-end="3570" vertical-scroll-proportion="0.68" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="20" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../src/stomp/Frame.java">
@@ -568,7 +550,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="360" column="0" selection-start="12905" selection-end="12905" vertical-scroll-proportion="0.6193103">
+        <state line="175" column="0" selection-start="6641" selection-end="6641" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.41379312">
           <folding />
         </state>
       </provider>
