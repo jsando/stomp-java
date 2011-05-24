@@ -77,6 +77,9 @@ public final class TcpConnection extends Connection implements Runnable {
 
     @Override
     protected void disconnect() {
+        // According to the STOMP design, the clients sends a DISCONNECT.
+        transmitDisconnect();
+
         // Preferred way to close is to send EOF via shutdownInput, but SSLSockets don't support that method.
         // Also must force socket close or input/output streams may hang
         try {
@@ -111,11 +114,7 @@ public final class TcpConnection extends Connection implements Runnable {
         }
 
         if (!closedSocket) {
-            try {
-                transmit(new Frame(Frame.TYPE_DISCONNECT, null, null), -1);
-            } catch (IOException e) {
-                publishError("Disconnect failed (ignored): " + e, e);
-            }
+            transmitDisconnect();
             try {
                 socket.close();
             } catch (IOException e) {
@@ -123,5 +122,13 @@ public final class TcpConnection extends Connection implements Runnable {
             }
         }
         closed = true;
+    }
+
+    private void transmitDisconnect() {
+        try {
+            transmit(new Frame(Frame.TYPE_DISCONNECT, null, null), -1);
+        } catch (IOException e) {
+            publishError("Disconnect failed (ignored): " + e, e);
+        }
     }
 }
