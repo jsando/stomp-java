@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="b2e87b0d-f2e1-4cee-9c99-3c1b354b7104" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iws" afterPath="$PROJECT_DIR$/stomp.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/Connection.java" afterPath="$PROJECT_DIR$/../src/stomp/Connection.java" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -62,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TcpConnection.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TcpConnection.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="2748" selection-end="2748" vertical-scroll-proportion="0.13944224">
+            <state line="51" column="56" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Connection.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="12" selection-start="7595" selection-end="7595" vertical-scroll-proportion="0.0">
+            <state line="334" column="0" selection-start="12185" selection-end="12185" vertical-scroll-proportion="0.28419656">
               <folding />
             </state>
           </provider>
@@ -135,8 +135,8 @@
         <option value="$PROJECT_DIR$/../src/stomp/UdpConnection.java" />
         <option value="$PROJECT_DIR$/../test/stomptest/UdpConnectionTest.java" />
         <option value="$PROJECT_DIR$/../build.xml" />
-        <option value="$PROJECT_DIR$/../src/stomp/Connection.java" />
         <option value="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
+        <option value="$PROJECT_DIR$/../src/stomp/Connection.java" />
       </list>
     </option>
   </component>
@@ -487,16 +487,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../src/stomp/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/stomptest/StompTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../test/stompperf/TcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="77" selection-start="4599" selection-end="4599" vertical-scroll-proportion="0.0" />
@@ -561,16 +551,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/1.6.0_22-b04-307.jdk/Contents/Home/src.jar!/src/java/io/BufferedInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="12" selection-start="7595" selection-end="7595" vertical-scroll-proportion="0.0">
+        <state line="156" column="11" selection-start="5567" selection-end="5567" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/1.6.0_22-b04-307.jdk/Contents/Home/src.jar!/src/java/io/BufferedOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="11" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../src/stomp/TcpConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2748" selection-end="2748" vertical-scroll-proportion="0.13944224">
+        <state line="51" column="56" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/stomp/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="334" column="0" selection-start="12185" selection-end="12185" vertical-scroll-proportion="0.28419656">
           <folding />
         </state>
       </provider>

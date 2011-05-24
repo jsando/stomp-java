@@ -333,6 +333,12 @@ public abstract class Connection {
             lastError = message;
             lastException = ex;
             HashSet<Consumer> consumers = new HashSet<Consumer>(subscriptions.values());
+            if (consumers.isEmpty()) {
+                System.err.printf("Error received (no listeners to notify!): %s", message);
+                if (ex != null) {
+                    ex.printStackTrace();
+                }
+            }
             for (Consumer consumer : consumers) {
                 consumer.onError(this, message, ex);
             }
