@@ -30,6 +30,9 @@ public final class TcpConnection extends Connection implements Runnable {
         if (properties.containsKey("tcpNoDelay")) {
             socket.setTcpNoDelay("true".equals(properties.getProperty("tcpNoDelay")));
         }
+        if (properties.containsKey("soLinger")) {
+            socket.setSoLinger(true, Integer.parseInt (properties.getProperty("soLinger")));
+        }
 
         super.start();
 
