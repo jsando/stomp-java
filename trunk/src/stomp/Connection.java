@@ -1,9 +1,7 @@
 package stomp;
 
 import javax.net.SocketFactory;
-import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.io.StringReader;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -240,6 +238,7 @@ public abstract class Connection {
         Frame frame = new Frame(Frame.TYPE_SUBSCRIBE, null, null);
         frame.getHeaders().put("destination", destination);
         String id = createSubscriptionId(destination);
+        subscriptions.put (id, consumer); // Store subscription -> consumer FIRST, messages start coming in immediately!
         frame.getHeaders().put("id", id);
         if (headers != null) {
             for (int i = 0; i < headers.length; ) {
@@ -249,7 +248,6 @@ public abstract class Connection {
             }
         }
         transmit1(frame, waitMillis);
-        subscriptions.put (id, consumer);
     }
 
     public void unsubscribe (String destination, long waitMillis) throws IOException {
@@ -296,10 +294,20 @@ public abstract class Connection {
                         Message message = new Message(this, frame);
                         consumer.onMessage(message);
                     } catch (Exception e) {
-                        publishError("Unandled exception in consumer: " + e, e);
+                        publishError("Unhandled exception in consumer: " + e, e);
                     }
                 } else {
-                    publishError ("Message received but no consumers: " + subscriptionId, null);
+                    String s;
+                    try {
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        DataOutputStream dos = new DataOutputStream(baos);
+                        frame.write(dos);
+                        s = baos.toString();
+                    } catch (IOException e) {
+                        s = "(unable to display frame content)";
+                    }
+
+                    publishError("Message received but no consumers: \n" + s, null);
                 }
             }
 
@@ -314,7 +322,7 @@ public abstract class Connection {
         } else if (frame.getType().equals(Frame.TYPE_ERROR)) {
             publishError (new String (frame.getContent(), UTF_8), null);
         } else {
-            publishError ("command not implemented: " + frame.getType(), null);
+            publishError ("Command not implemented: " + frame.getType(), null);
         }
 
         while (paused) {
@@ -334,7 +342,7 @@ public abstract class Connection {
             lastException = ex;
             HashSet<Consumer> consumers = new HashSet<Consumer>(subscriptions.values());
             if (consumers.isEmpty()) {
-                System.err.printf("Error received (no listeners to notify!): %s", message);
+                System.err.printf("Error received (no listeners to notify!): '%s'\n", message);
                 if (ex != null) {
                     ex.printStackTrace();
                 }
