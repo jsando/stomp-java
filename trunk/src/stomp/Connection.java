@@ -1,7 +1,11 @@
 package stomp;
 
 import javax.net.SocketFactory;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.io.StringReader;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -10,30 +14,30 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class Connection {
 
     // Constant for Utf8 conversion
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
-    // Active subscriptions
-    private final Map<String, Consumer> subscriptions = new HashMap<String, Consumer>();
+    // Active subscriptions.  Updated / queried by separate threads so must be thread-safe.
+    private final Map<String, Consumer> subscriptions = new ConcurrentHashMap<String, Consumer>();
 
     // URI the connection was created against.
     private final URI uri;
 
-    // Pending receipts (TODO: purge periodically?)
+    // Pending receipts - all access is manually synchronized. (TODO: purge periodically?)
     private final Set<String> receipts = new HashSet<String>();
 
     // Set to 'true' as soon as CONNECTED frame is received from server.
     protected boolean connected;
 
-    // If an error occurs during connection, tcpconnection needs the error so it can throw the exception.
+    // If an error occurs during connection, tcp connection needs the error so it can throw the exception.
     protected String lastError;
     protected Exception lastException;
 
@@ -277,40 +281,36 @@ public abstract class Connection {
 
     protected void frameReceived(Frame frame) {
         if (frame.getType().equals(Frame.TYPE_MESSAGE)) {
-            synchronized (subscriptions) {
+            // If there's a subscription header, then we assigned it.
+            String subscriptionId = frame.getHeaders().get("subscription");
+            if (subscriptionId == null) {
 
-                // If there's a subscription header, then we assigned it.
-                String subscriptionId = frame.getHeaders().get("subscription");
-                if (subscriptionId == null) {
-
-                    // No subscription, just use the destination (from udp and buffer connections)
-                    subscriptionId = frame.getHeaders().get("destination");
-                }
-
-                // Find the consumer and dispatch to the listener.
-                Consumer consumer = subscriptions.get (subscriptionId);
-                if (consumer != null) {
-                    try {
-                        Message message = new Message(this, frame);
-                        consumer.onMessage(message);
-                    } catch (Exception e) {
-                        publishError("Unhandled exception in consumer: " + e, e);
-                    }
-                } else {
-                    String s;
-                    try {
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        DataOutputStream dos = new DataOutputStream(baos);
-                        frame.write(dos);
-                        s = baos.toString();
-                    } catch (IOException e) {
-                        s = "(unable to display frame content)";
-                    }
-
-                    publishError("Message received but no consumers: \n" + s, null);
-                }
+                // No subscription, just use the destination (from udp and buffer connections)
+                subscriptionId = frame.getHeaders().get("destination");
             }
 
+            // Find the consumer and dispatch to the listener.
+            Consumer consumer = subscriptions.get (subscriptionId);
+            if (consumer != null) {
+                try {
+                    Message message = new Message(this, frame);
+                    consumer.onMessage(message);
+                } catch (Exception e) {
+                    publishError("Unhandled exception in consumer: " + e, e);
+                }
+            } else {
+                String s;
+                try {
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    DataOutputStream dos = new DataOutputStream(baos);
+                    frame.write(dos);
+                    s = baos.toString();
+                } catch (IOException e) {
+                    s = "(unable to display frame content)";
+                }
+
+                publishError("Message received but no consumers: \n" + s, null);
+            }
         } else if (frame.getType().equals(Frame.TYPE_CONNECTED)) {
             setConnected();
         } else if (frame.getType().equals(Frame.TYPE_RECEIPT)) {
@@ -337,18 +337,19 @@ public abstract class Connection {
     }
 
     protected void publishError(String message, Exception ex) {
-        synchronized (subscriptions) {
-            lastError = message;
-            lastException = ex;
-            HashSet<Consumer> consumers = new HashSet<Consumer>(subscriptions.values());
-            if (consumers.isEmpty()) {
-                System.err.printf("Error received (no listeners to notify!): '%s'\n", message);
-                if (ex != null) {
-                    ex.printStackTrace();
-                }
-            }
-            for (Consumer consumer : consumers) {
-                consumer.onError(this, message, ex);
+        lastError = message;
+        lastException = ex;
+        int notifyCount = 0;
+        for (Consumer consumer : subscriptions.values()) {
+            consumer.onError(this, message, ex);
+            notifyCount++;
+        }
+
+        // If nobody was notified, print to stderr so there's at least SOME visibility of a problem.
+        if (notifyCount == 0) {
+            System.err.printf("Error received (no listeners to notify!): '%s'\n", message);
+            if (ex != null) {
+                ex.printStackTrace();
             }
         }
     }
