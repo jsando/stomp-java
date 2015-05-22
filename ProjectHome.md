@@ -1,0 +1,1 @@
+Lightweight STOMP Protocol Implementation for Java 1.5+
