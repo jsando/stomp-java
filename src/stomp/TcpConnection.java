@@ -64,6 +64,18 @@ public final class TcpConnection extends Connection implements Runnable {
     }
 
     @Override
+    public void testConnection() {
+        synchronized (output) {
+            try {
+                output.write(0x0a); // per stomp spec 1.1, a single newline
+                output.flush();
+            } catch (Exception e) {
+                publishError("Error in heartbeat: " + e, e);
+            }
+        }
+    }
+
+    @Override
     protected void transmit(Frame frame, long waitMillis) throws IOException {
         String receipt = null;
         if (waitMillis >= 0)

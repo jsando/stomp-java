@@ -211,6 +211,10 @@ public abstract class Connection {
         return paused;
     }
 
+    public void testConnection() {
+
+    }
+
     public void close() {
         // Close, if not already in the act of closing.
         if (!closed) {
