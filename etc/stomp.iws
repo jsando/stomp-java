@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b2e87b0d-f2e1-4cee-9c99-3c1b354b7104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/Connection.java" afterPath="$PROJECT_DIR$/../src/stomp/Connection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README" afterPath="$PROJECT_DIR$/../README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" afterPath="$PROJECT_DIR$/../src/stomp/TcpConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.ipr" afterPath="$PROJECT_DIR$/stomp.ipr" />
+    <list default="true" readonly="true" id="b2e87b0d-f2e1-4cee-9c99-3c1b354b7104" name="Default" comment="Provide mechanism to manually test connection, using heartbeat (0x0A byte) defined in STOMP 1.1.  &#10;&#10;I have a situation where the client only receives messages and should not send, so must verify the underlying TCP socket by another means.  This appears to be working with Apache ActiveMQ 5.5.">
+      <change type="MOVED" beforePath="C:\aristocrat\code\github\stomp-java\README" afterPath="$PROJECT_DIR$/../README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stomp.iws" afterPath="$PROJECT_DIR$/stomp.iws" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
@@ -65,7 +62,18 @@
     <favorites_list name="stomp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36065573">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -515,19 +523,27 @@
       <created>1279377877749</created>
       <option name="number" value="Default" />
       <updated>1279377877749</updated>
-      <workItem from="1432327006811" duration="452000" />
+      <workItem from="1432327006811" duration="603000" />
     </task>
+    <task id="LOCAL-00001" summary="Provide mechanism to manually test connection, using heartbeat (0x0A byte) defined in STOMP 1.1.  &#10;&#10;I have a situation where the client only receives messages and should not send, so must verify the underlying TCP socket by another means.  This appears to be working with Apache ActiveMQ 5.5.">
+      <created>1432327540225</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1432327540225</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452000" />
+    <option name="totallyTimeSpent" value="603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1218" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -544,7 +560,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -570,10 +585,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="Provide mechanism to manually test connection, using heartbeat (0x0A byte) defined in STOMP 1.1.  &#10;&#10;I have a situation where the client only receives messages and should not send, so must verify the underlying TCP socket by another means.  This appears to be working with Apache ActiveMQ 5.5." />
+    <option name="LAST_COMMIT_MESSAGE" value="Provide mechanism to manually test connection, using heartbeat (0x0A byte) defined in STOMP 1.1.  &#10;&#10;I have a situation where the client only receives messages and should not send, so must verify the underlying TCP socket by another means.  This appears to be working with Apache ActiveMQ 5.5." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -789,7 +808,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../README">
+    <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36065573">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
