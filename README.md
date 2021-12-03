@@ -1,3 +1,7 @@
+THIS PROJECT IS ARCHIVED
+
+This code was/is widely deployed but hasn't required changes in many years.
+
 # STOMP 1.0 Java Client / Server
 
 Compatible with Java 1.5+ (including Android).
